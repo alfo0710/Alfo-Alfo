@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfo & Alfo</title>
+    <link rel="stylesheet" href="estilos/index.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <nav>
+            <a href="#seccion-fechas">Fechas</a>
+            <a href="#seccion-regalos">Regalos</a>
+            <a href="#seccion-fotos">Fotos</a>
+        </nav>
+
+        <h1>𝙰𝚕𝚏𝚘 & 𝙰𝚕𝚏𝚘</h1>
+
+        <div class="opciones-genero">
+            <img id="alfonso" src="img/alfonso1.png" alt="Hombre" onclick="cambiarApariencia('hombre')">
+            <img src="img/alfonsina1.png" alt="Mujer" onclick="cambiarApariencia('mujer')">
+        </div>
+    </header>
+
+    <main class="contenido">
+        <div class="carrusel">
+            <img id="imagen-carrusel" src="img/aa1.JPG" alt="Carrusel">
+        </div>
+    </main>
+
+    <!-- Sección de Fechas -->
+    <section id="seccion-fechas" class="seccion">
+        <h2>📅 Fechas Importantes</h2>
+        <div id="calendario"></div>
+    </section>
+
+    <!-- Sección de Regalos -->
+    <section id="seccion-regalos" class="seccion">
+        <h2>🎁 Ideas de Regalos</h2>
+        <div class="regalo">
+            <img src="img/regalo1.jpg" alt="Regalo especial">
+            <div class="pie-foto">
+                <h3>Regalo Sorpresa</h3>
+                <p>El mejor regalo para sorprender a alguien especial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Fotos -->
+    <section id="seccion-fotos" class="seccion">
+        <h2>📸 Galería de Fotos</h2>
+        
+        <div class="galeria-anio">
+            <h3>2023</h3>
+            <div class="galeria">
+                <h4>🌸 Primavera</h4>
+                <img src="img/2023-primavera1.jpg">
+                <img src="img/2023-primavera2.jpg">
+                <h4>☀️ Verano</h4>
+                <img src="img/2023-verano1.jpg">
+                <img src="img/2023-verano2.jpg">
+                <h4>🍂 Otoño</h4>
+                <img src="img/2023-otono1.jpg">
+                <img src="img/2023-otono2.jpg">
+                <h4>❄️ Invierno</h4>
+                <img src="img/2023-invierno1.jpg">
+                <img src="img/2023-invierno2.jpg">
+            </div>
+        </div>
+        
+        <div class="galeria-anio">
+            <h3>2024</h3>
+            <div class="galeria">
+                <h4>🌸 Primavera</h4>
+                <img src="img/2024-primavera1.jpg">
+                <img src="img/2024-primavera2.jpg">
+                <h4>☀️ Verano</h4>
+                <img src="img/2024-verano1.jpg">
+                <img src="img/2024-verano2.jpg">
+                <h4>🍂 Otoño</h4>
+                <img src="img/2024-otono1.jpg">
+                <img src="img/2024-otono2.jpg">
+                <h4>❄️ Invierno</h4>
+                <img src="img/2024-invierno1.jpg">
+                <img src="img/2024-invierno2.jpg">
+            </div>
+        </div>
+        
+        <div class="galeria-anio">
+            <h3>2025</h3>
+            <p>Aún no hay fotos disponibles.</p>
+        </div>
+    </section>
+
+    <script src="java/index.js"></script>
+    <script src="java/calendario.js"></script>
+</body>
+</html>
