@@ -1,7 +1,13 @@
 function generarCalendario() {
     const dias = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'];
-    const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const meses = [
+        'Enero ☀️', 'Febrero 🎭', 'Marzo 🍀', 'Abril 🌧️', 
+        'Mayo 🍂', 'Junio 🔥', 'Julio 🧣', 'Agosto 💨', 
+        'Septiembre 🌸', 'Octubre 🎃', 'Noviembre 🌞', 'Diciembre 🎄'
+    ];
+    
     const calendario = document.getElementById('calendario');
+    calendario.innerHTML = ''; // Evitar duplicados
     const year = 2025;
 
     const colores = {
@@ -14,17 +20,18 @@ function generarCalendario() {
         }
     };
 
-    // Estilos compactos
+    // Estilos compactos y bordes negros
     calendario.style.display = 'grid';
-    calendario.style.gridTemplateColumns = 'repeat(4, 1fr)'; // Cuatro columnas para que entren todos los meses
+    calendario.style.gridTemplateColumns = 'repeat(4, 1fr)';
     calendario.style.gap = '10px';
 
     for (let mes = 0; mes < 12; mes++) {
         const mesElemento = document.createElement('div');
         mesElemento.classList.add('mes');
-        mesElemento.style.border = '1px solid #ccc';
+        mesElemento.style.border = '2px solid black';
         mesElemento.style.padding = '10px';
         mesElemento.style.textAlign = 'center';
+        mesElemento.style.borderRadius = '10px'; // Bordes redondeados
 
         const nombreMes = document.createElement('h3');
         nombreMes.textContent = meses[mes];
@@ -33,10 +40,12 @@ function generarCalendario() {
         const tabla = document.createElement('table');
         tabla.style.width = '100%';
         tabla.style.tableLayout = 'fixed';
+        tabla.style.borderCollapse = 'collapse';
+        tabla.style.border = '1px solid black';
 
         // Crear encabezado de días
         const thead = document.createElement('thead');
-        thead.innerHTML = `<tr>${dias.map(dia => `<th>${dia}</th>`).join('')}</tr>`;
+        thead.innerHTML = `<tr>${dias.map(dia => `<th style="border: 1px solid black;">${dia}</th>`).join('')}</tr>`;
         tabla.appendChild(thead);
 
         const tbody = document.createElement('tbody');
@@ -46,12 +55,17 @@ function generarCalendario() {
         let fila = document.createElement('tr');
 
         // Rellenar primeros días en blanco
-        for (let i = 0; i < primerDia; i++) fila.appendChild(document.createElement('td'));
+        for (let i = 0; i < primerDia; i++) {
+            const td = document.createElement('td');
+            td.style.border = '1px solid black';
+            fila.appendChild(td);
+        }
 
         // Rellenar los días del mes
         for (let i = primerDia; i < 7 && diaContador <= diasEnMes; i++) {
             const td = document.createElement('td');
             td.textContent = diaContador++;
+            td.style.border = '1px solid black';
             aplicarColores(td, diaContador - 1, mes);
             fila.appendChild(td);
         }
@@ -63,6 +77,7 @@ function generarCalendario() {
             for (let i = 0; i < 7 && diaContador <= diasEnMes; i++) {
                 const td = document.createElement('td');
                 td.textContent = diaContador++;
+                td.style.border = '1px solid black';
                 aplicarColores(td, diaContador - 1, mes);
                 fila.appendChild(td);
             }
